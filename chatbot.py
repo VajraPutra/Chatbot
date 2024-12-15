@@ -4,6 +4,7 @@ from langchain_ollama import OllamaLLM
 from langchain_core.prompts import ChatPromptTemplate
 
 # Define the conversation template
+# Add your own parameters
 template = """
 Write and explain code and questions.
 
@@ -14,7 +15,8 @@ Question: {question}
 Answer:
 """
 
-model = OllamaLLM(model="qwen2.5-coder:latest")  # check your model name by going to cmd and typing ollama list
+#Add the model of your choice
+model = OllamaLLM(model="")  # check your model name by going to cmd and typing ollama list
 prompt = ChatPromptTemplate.from_template(template)
 chain = prompt | model
 
